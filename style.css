@@ -1,0 +1,71 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* I declare styles for small device screen first */
+/* below is the content box style 
+   for device screen width under 600px */
+.content {
+    width: 100%;
+    height: 100px;
+}
+
+#red {
+    background-color: red;
+}
+
+#green {
+    background-color: green;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#purple {
+    background-color: purple;
+}
+
+#grey {
+    background-color: grey;
+}
+
+
+@media screen and (min-width: 600px) {
+
+    /* content box style for device screen width above 600px */
+    /* the style in this query will be ignored 
+       if the screen width is above 960px */
+    .content {
+        flex: 0 0 50%;
+    }
+}
+
+@media screen and (min-width: 960px) {
+
+    /* content box style for device screen width above 960px */
+    /* if the device width is wider than 600px or equal,
+       the style in this query will take precedence over the previous query */
+    .content {
+        flex: 0 0 calc(100% / 3);
+    }
+}
+
+
+/* Alternative */
+/* We can define (min-width) and (max-width) 
+to make sure the style is only applied for certain device width range*/
+
+/* e.g */
+/* @media screen and (min-width: 600px) and (max-width: 960px)  */
